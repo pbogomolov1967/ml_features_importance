@@ -27,6 +27,7 @@ model.fit(X_train, y_train)
 predictions = model.predict(X_test)
 print(f'Model Score: {model.score(X_test, y_test)}, Sum of Importances: {sum(model.feature_importances_)}')
 
-calc_importance(col_names2, model.feature_importances_, show_prc=50, collapse_vals=True)
+features, importance_percent = calc_importance(col_names2, model.feature_importances_, show_prc=50, collapse_vals=True)
+print(list(zip(features, importance_percent)))
 
 print('done')
